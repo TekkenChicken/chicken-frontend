@@ -1,0 +1,255 @@
+{
+  "akuma": {
+    "id": 1,
+    "name": "Akuma",
+    "label": "akuma",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "alisa": {
+    "id": 2,
+    "name": "Alisa Bosconovich",
+    "label": "alisa",
+    "game": "t7",
+    "last_updated": 1496541978
+  },
+  "asuka": {
+    "id": 3,
+    "name": "Asuka Kazama",
+    "label": "asuka",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "bob": {
+    "id": 4,
+    "name": "Bob Richards",
+    "label": "bob",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "bryan": {
+    "id": 5,
+    "name": "Bryan Fury",
+    "label": "bryan",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "claudio": {
+    "id": 6,
+    "name": "Claudio",
+    "label": "claudio",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "devil-jin": {
+    "id": 7,
+    "name": "Devil Jin",
+    "label": "devil-jin",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "dragunov": {
+    "id": 8,
+    "name": "Sergei Dragunov",
+    "label": "dragunov",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "eddy": {
+    "id": 9,
+    "name": "Eddy Gordo",
+    "label": "eddy",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "eliza": {
+    "id": 10,
+    "name": "Eliza",
+    "label": "eliza",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "feng": {
+    "id": 11,
+    "name": "Feng Wei",
+    "label": "feng",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "gigas": {
+    "id": 12,
+    "name": "Gigas",
+    "label": "gigas",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "heihachi": {
+    "id": 13,
+    "name": "Heihachi Mishima",
+    "label": "heihachi",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "hwoarang": {
+    "id": 14,
+    "name": "Hwoarang",
+    "label": "hwoarang",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "jack-7": {
+    "id": 15,
+    "name": "Jack 7",
+    "label": "jack-7",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "jin": {
+    "id": 16,
+    "name": "Jin Kazama",
+    "label": "jin",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "josie": {
+    "id": 17,
+    "name": "Josie Rizal",
+    "label": "josie",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "katarina": {
+    "id": 18,
+    "name": "Katarina Alves",
+    "label": "katarina",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "kazumi": {
+    "id": 19,
+    "name": "Kazumi Mishima",
+    "label": "kazumi",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "kazuya": {
+    "id": 20,
+    "name": "Kazuya Mishima",
+    "label": "kazuya",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "king": {
+    "id": 21,
+    "name": "King",
+    "label": "king",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "kuma": {
+    "id": 22,
+    "name": "Kuma",
+    "label": "kuma",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "lars": {
+    "id": 23,
+    "name": "Lars Alexanderson",
+    "label": "lars",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "law": {
+    "id": 24,
+    "name": "Marshall Law",
+    "label": "law",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "lee": {
+    "id": 25,
+    "name": "Lee Chaolan",
+    "label": "lee",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "leo": {
+    "id": 26,
+    "name": "Leo Kliesen",
+    "label": "leo",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "lili": {
+    "id": 27,
+    "name": "Lili Rochefort",
+    "label": "lili",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "ling": {
+    "id": 28,
+    "name": "Ling Xiaoyu",
+    "label": "ling",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "lucky-chloe": {
+    "id": 29,
+    "name": "Lucky Chloe",
+    "label": "lucky-chloe",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "master-raven": {
+    "id": 30,
+    "name": "Master Raven",
+    "label": "master-raven",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "miguel": {
+    "id": 31,
+    "name": "Miguel",
+    "label": "miguel",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "nina": {
+    "id": 32,
+    "name": "Nina Williams",
+    "label": "nina",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "paul": {
+    "id": 33,
+    "name": "Paul Phoenix",
+    "label": "paul",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "shaheen": {
+    "id": 34,
+    "name": "Shaheen",
+    "label": "shaheen",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "steve": {
+    "id": 35,
+    "name": "Steve Fox",
+    "label": "steve",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "yoshimitsu": {
+    "id": 36,
+    "name": "Yoshimitsu",
+    "label": "yoshimitsu",
+    "game": "t7",
+    "last_updated": 1496541977
+  },
+  "last_updated": 1496541978
+}
