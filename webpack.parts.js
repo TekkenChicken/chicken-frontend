@@ -40,6 +40,28 @@ exports.loadCSS = function(paths) {
   }
 };
 
+exports.extractCSS = function(paths) {
+  return {
+    plugins: [
+      new ExtractTextPlugin({
+        filename: 'bundle.css'
+      })
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          include: paths,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'resolve-url-loader', 'sass-loader']
+          })
+        }
+      ]
+    }
+  }
+};
+
 exports.loadJavascript = function(paths) {
   return {
     module: {
@@ -51,12 +73,33 @@ exports.loadJavascript = function(paths) {
             loader: 'babel-loader',
             options: {
               //enable caching for enhanced performance during development
-              cacheDirectory: true,
-              presets: ['react', 'es2015']
+              cacheDirectory: true
             }
           }
         }
       ]
     }
+  }
+};
+
+exports.lintJavascript = function({paths, options}) {
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          include: paths,
+          enforce: 'pre',
+          loader: 'eslint-loader',
+          options: options
+        }
+      ]
+    }
+  }
+};
+
+exports.generateSourcemaps = function({type}) {
+  return {
+    devtool: type
   }
 };

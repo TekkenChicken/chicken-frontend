@@ -33,7 +33,7 @@ class App extends Component {
         <section className='main section'>
           <h1 className='title'>Tekken Chicken Administration Panel</h1>
           <Route exact path='/' component={Home}/>
-          <Route path='/:character' component={CharacterDetail}/>
+          <Route exact path='/:character' component={CharacterDetail}/>
         </section>
       </Router>
     );
