@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test",
     "start": "nodemon --watch webpack.config.js --exec webpack-dev-server --env dev",
-    "bundle": "webpack -d --progress --env prod",
+    "bundle": "webpack -d --progress --env dev",
     "build": "webpack -p --progress --env prod"
   },
   "repository": {
