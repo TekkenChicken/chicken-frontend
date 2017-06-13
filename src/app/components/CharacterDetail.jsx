@@ -10,7 +10,7 @@ export default class CharacterDetail extends Component {
   }
 
   render() {
-    return (
+    return(
       <div className='character-detail container is-fluid'>
         <h1 className='title'>Character Detail - {this.props.match.params.character.toUpperCase()}</h1>
         <table className='table'>
