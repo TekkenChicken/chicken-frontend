@@ -18,6 +18,9 @@ const common = merge([
       path: PATHS.build,
       filename: 'bundle.js'
     },
+    resolve: {
+      extensions: [".jsx", ".scss", ".js"]
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template: 'index.html'

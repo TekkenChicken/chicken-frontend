@@ -2,12 +2,23 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 
 import stubFrameData from '../fixtures/framedata.json';
+import CharacterDetailRow from "./CharacterDetailRow";
 
 export default class CharacterDetail extends Component {
+  constructor(props) {
+    super(props);
+
+    // this.updateRow = this.updateRow.bind(this);
+  }
+
   componentWillMount() {
     this.state = {
       character: this.props.match.params.character === 'home' ? '' : this.props.match.params.character
     }
+  }
+
+  updateRow(e) {
+    console.log('clicked', e);
   }
 
   render() {
@@ -50,18 +61,7 @@ export default class CharacterDetail extends Component {
     let selectedChar = stubFrameData[char];
     return selectedChar.data.map(function(data, index) {
       return (
-        <tr key={index}>
-          <td>{data.name}</td>
-          <td>{data.notation}</td>
-          <td>{data.hit_level}</td>
-          <td>{data.damage}</td>
-          <td>{data.speed}</td>
-          <td>{data.on_block}</td>
-          <td>{data.on_hit}</td>
-          <td>{data.on_ch}</td>
-          <td>{data.properties}</td>
-          <td>{data.notes === "null" ? "" : data.notes}</td>
-        </tr>
+        <CharacterDetailRow data={data} key={index}/>
       );
     });
   }
