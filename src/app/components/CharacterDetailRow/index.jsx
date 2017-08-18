@@ -12,7 +12,6 @@ export default class CharacterDetailRow extends Component {
     }
 
     updateRow(e) {
-        console.log('clicked', e.currentTarget);
         this.setState({editable: true});
     }
 
@@ -76,7 +75,7 @@ export default class CharacterDetailRow extends Component {
                     </td>
                     <td>
                         <div className='control'>
-                            <h4 className='button is-dark' onClick={this.cancelEditing}>Cancel</h4>
+                            <h4 className='cancel button is-dark' onClick={this.cancelEditing}>Cancel</h4>
                         </div>
                     </td>
                 </tr>
