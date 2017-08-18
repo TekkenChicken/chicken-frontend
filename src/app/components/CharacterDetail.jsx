@@ -7,6 +7,8 @@ import CharacterDetailRow from "./CharacterDetailRow";
 export default class CharacterDetail extends Component {
   constructor(props) {
     super(props);
+
+    this.submitData = this.submitData.bind(this);
   }
 
   componentWillMount() {
@@ -21,6 +23,7 @@ export default class CharacterDetail extends Component {
 
   submitData() {
     console.log('data submitted!');
+    console.log(this);
   }
 
   render() {

@@ -8,6 +8,7 @@ export default class CharacterDetailRow extends Component {
         };
 
         this.updateRow = this.updateRow.bind(this);
+        this.cancelEditing = this.cancelEditing.bind(this);
     }
 
     updateRow(e) {
@@ -15,58 +16,67 @@ export default class CharacterDetailRow extends Component {
         this.setState({editable: true});
     }
 
+    cancelEditing() {
+        this.setState({editable: false});
+    }
+
     render() {
         if(this.state.editable) {
             return (
-                <tr onClick={(e) => this.updateRow(e)}>
+                <tr>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.name}/>
+                            <input className="input" defaultValue={this.props.data.name}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.notation}/>
+                            <input className="input" defaultValue={this.props.data.notation}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.hit_level}/>
+                            <input className="input" defaultValue={this.props.data.hit_level}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.damage}/>
+                            <input className="input" defaultValue={this.props.data.damage}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.speed}/>
+                            <input className="input" defaultValue={this.props.data.speed}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.on_block}/>
+                            <input className="input" defaultValue={this.props.data.on_block}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.on_hit}/>
+                            <input className="input" defaultValue={this.props.data.on_hit}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.on_ch}/>
+                            <input className="input" defaultValue={this.props.data.on_ch}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.properties}/>
+                            <input className="input" defaultValue={this.props.data.properties}/>
                         </div>
                     </td>
                     <td>
                         <div className="control">
-                            <input className="input" value={this.props.data.notes === "null" ? "" : this.props.data.notes}/>
+                            <input className="input" defaultValue={this.props.data.notes === "null" ? "" : this.props.data.notes}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div className='control'>
+                            <h4 className='button is-dark' onClick={this.cancelEditing}>Cancel</h4>
                         </div>
                     </td>
                 </tr>
