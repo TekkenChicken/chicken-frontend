@@ -19,12 +19,23 @@ export default class CharacterDetail extends Component {
     console.log('clicked', e);
   }
 
+  submitData() {
+    console.log('data submitted!');
+  }
+
   render() {
     return(
       <div className='character-detail container is-fluid'>
-        <Link to={"/"}>
-          <h2 className="subtitle return button is-medium">{"Return Home"}</h2>
-        </Link>
+        <div className='columns'>
+          <div className='column is-narrow'>
+            <Link to={"/"}>
+              <h2 className="subtitle return button is-medium">{"Return Home"}</h2>
+            </Link>
+          </div>
+          <div className='column'>
+            <h2 className='subtitle button is-primary' onClick={this.submitData}>Submit all data</h2>
+          </div>
+        </div>
         <h1 className='title'>Character Detail - {this.props.match.params.character.toUpperCase()}</h1>
         <table className='table'>
           {this.renderTableTitles()}
