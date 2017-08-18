@@ -28,4 +28,13 @@ describe("CharacterDetailRow", () => {
         const button = component.find('.control .cancel');
         expect(button.exists()).toBe(true);
     });
+
+    it("should cancel data input when cancelled", () => {
+        const component = mount(<CharacterDetailRow data={data}/>);
+        component.simulate('click');
+        const button = component.find('.control .cancel');
+        button.simulate('click');
+        const control = component.find('.control input');
+        expect(control.exists()).toBe(false);
+    });
 });
