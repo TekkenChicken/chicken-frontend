@@ -1,16 +1,26 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 
-import stubFrameData from '../fixtures/framedata';
+import stubFrameData from '../fixtures/framedata.json';
 
 export default class CharacterDetail extends Component {
+  componentWillMount() {
+    this.state = {
+      character: this.props.match.params.character === 'home' ? '' : this.props.match.params.character
+    }
+  }
+
   render() {
     return(
       <div className='character-detail container is-fluid'>
+        <Link to={"/"}>
+          <h2 className="subtitle return button is-medium">{"Return Home"}</h2>
+        </Link>
         <h1 className='title'>Character Detail - {this.props.match.params.character.toUpperCase()}</h1>
         <table className='table'>
           {this.renderTableTitles()}
           <tbody>
-            {this.renderFrameData(this.props.match.params.character)}
+            {this.renderFrameData(this.state.character)}
           </tbody>
         </table>
       </div>
@@ -38,7 +48,7 @@ export default class CharacterDetail extends Component {
 
   renderFrameData(char) {
     let selectedChar = stubFrameData[char];
-    return selectedChar.data.map((data, index) => {
+    return selectedChar.data.map(function(data, index) {
       return (
         <tr key={index}>
           <td>{data.name}</td>
@@ -50,7 +60,7 @@ export default class CharacterDetail extends Component {
           <td>{data.on_hit}</td>
           <td>{data.on_ch}</td>
           <td>{data.properties}</td>
-          <td>{data.notes}</td>
+          <td>{data.notes === "null" ? "" : data.notes}</td>
         </tr>
       );
     });

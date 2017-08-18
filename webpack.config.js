@@ -29,7 +29,12 @@ const common = merge([
 module.exports = function(env) {
   if (env === 'prod') {
     return merge([
-      common
+      common,
+      parts.clean(PATHS.build),
+      parts.loadJavascript(PATHS.app),
+      parts.lintJavascript({paths: PATHS.app}),
+      parts.generateSourcemaps({type: 'source-map'}),
+      parts.extractCSS(PATHS.app)
     ]);
   }
 
@@ -37,6 +42,8 @@ module.exports = function(env) {
     common,
     parts.loadCSS(PATHS.app),
     parts.loadJavascript(PATHS.app),
+    parts.lintJavascript({paths: PATHS.app}),
+    parts.generateSourcemaps({type: 'cheap-module-eval-source-map'}),
     parts.devServer({
       host: process.env.HOST,
       port: process.env.PORT
