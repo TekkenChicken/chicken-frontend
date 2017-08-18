@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 
 import stubFrameData from '../fixtures/framedata.json';
 
@@ -12,6 +13,9 @@ export default class CharacterDetail extends Component {
   render() {
     return(
       <div className='character-detail container is-fluid'>
+        <Link to={"/"}>
+          <h2 className="subtitle return button is-medium">{"Return Home"}</h2>
+        </Link>
         <h1 className='title'>Character Detail - {this.props.match.params.character.toUpperCase()}</h1>
         <table className='table'>
           {this.renderTableTitles()}
@@ -56,7 +60,7 @@ export default class CharacterDetail extends Component {
           <td>{data.on_hit}</td>
           <td>{data.on_ch}</td>
           <td>{data.properties}</td>
-          <td>{data.notes}</td>
+          <td>{data.notes === "null" ? "" : data.notes}</td>
         </tr>
       );
     });
