@@ -7,8 +7,6 @@ import CharacterDetailRow from "./CharacterDetailRow";
 export default class CharacterDetail extends Component {
   constructor(props) {
     super(props);
-
-    // this.updateRow = this.updateRow.bind(this);
   }
 
   componentWillMount() {

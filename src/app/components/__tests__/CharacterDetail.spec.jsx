@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 
-import CharacterDetail from './CharacterDetail';
+import CharacterDetail from '../CharacterDetail';
 
 describe('<CharacterDetail />', () => {
   it('Renders a Character Detail header', () => {
