@@ -21,63 +21,34 @@ export default class CharacterDetailRow extends Component {
 
     render() {
         if(this.state.editable) {
+            const { data } = this.props;
             return (
                 <tr>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.name}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.notation}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.hit_level}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.damage}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.speed}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.on_block}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.on_hit}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.on_ch}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.properties}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="control">
-                            <input className="input" defaultValue={this.props.data.notes === "null" ? "" : this.props.data.notes}/>
-                        </div>
-                    </td>
-                    <td>
-                        <div className='control'>
-                            <h4 className='cancel button is-dark' onClick={this.cancelEditing}>Cancel</h4>
-                        </div>
-                    </td>
+                    {
+                        Object.keys(data).map( (value, index) => {
+                            return (
+                                <td key={index}>
+                                    <div className="control">
+                                        <input type="text" className="input" defaultValue={data[value]}/>
+                                    </div>
+                                </td>
+                            )
+                        })
+                    }
+                    {
+                        <td>
+                            <div className="control">
+                                <input type="text" className="input" defaultValue={data.notes}/>
+                            </div>
+                        </td>
+                    }
+                    {
+                        <td>
+                            <div className="control">
+                                <h4 className='cancel button is-dark' onClick={this.cancelEditing}>Cancel</h4>
+                            </div>
+                        </td>
+                    }
                 </tr>
             );
         } else {
