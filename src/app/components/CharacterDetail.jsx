@@ -2,20 +2,43 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 
 import stubFrameData from '../fixtures/framedata.json';
+import CharacterDetailRow from "./CharacterDetailRow";
 
 export default class CharacterDetail extends Component {
+  constructor(props) {
+    super(props);
+
+    this.submitData = this.submitData.bind(this);
+  }
+
   componentWillMount() {
     this.state = {
       character: this.props.match.params.character === 'home' ? '' : this.props.match.params.character
     }
   }
 
+  updateRow(e) {
+    console.log('clicked', e);
+  }
+
+  submitData() {
+    console.log('data submitted!');
+    console.log(this);
+  }
+
   render() {
     return(
       <div className='character-detail container is-fluid'>
-        <Link to={"/"}>
-          <h2 className="subtitle return button is-medium">{"Return Home"}</h2>
-        </Link>
+        <div className='columns'>
+          <div className='column is-narrow'>
+            <Link to={"/"}>
+              <h2 className="subtitle return button is-medium">{"Return Home"}</h2>
+            </Link>
+          </div>
+          <div className='column'>
+            <h2 className='subtitle button is-primary' onClick={this.submitData}>Submit all data</h2>
+          </div>
+        </div>
         <h1 className='title'>Character Detail - {this.props.match.params.character.toUpperCase()}</h1>
         <table className='table'>
           {this.renderTableTitles()}
@@ -50,18 +73,7 @@ export default class CharacterDetail extends Component {
     let selectedChar = stubFrameData[char];
     return selectedChar.data.map(function(data, index) {
       return (
-        <tr key={index}>
-          <td>{data.name}</td>
-          <td>{data.notation}</td>
-          <td>{data.hit_level}</td>
-          <td>{data.damage}</td>
-          <td>{data.speed}</td>
-          <td>{data.on_block}</td>
-          <td>{data.on_hit}</td>
-          <td>{data.on_ch}</td>
-          <td>{data.properties}</td>
-          <td>{data.notes === "null" ? "" : data.notes}</td>
-        </tr>
+        <CharacterDetailRow data={data} key={index}/>
       );
     });
   }

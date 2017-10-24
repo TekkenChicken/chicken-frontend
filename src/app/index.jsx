@@ -5,7 +5,7 @@ import {
   Link
 } from 'react-router-dom';
 import {render} from 'react-dom';
-import 'whatwg-fetch';
+import axios from "axios";
 
 //import main sass file here
 import "./_main.scss";
@@ -21,13 +21,24 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetch('http://api.tekkenchicken.com/api/metadata/')
-    //   .then( (response) => {
-    //     console.log(response);
-    //   });
+    let fetchedFrameData, fetchedMetaData;
+    const axiosConfig = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      }
+    };
+
+    fetchedFrameData = axios.get("http://api.tekkenchicken.com/api/framedata", axiosConfig)
+      .then( (response) => console.log(response.data));
+
+    fetchedMetaData = axios.get("http://api.tekkenchicken.com/api/metadata", axiosConfig)
+      .then( (response) => console.log(response.data));
+
+    this.setState({frameData: fetchedFrameData});
   }
 
   render() {
+    console.log(this.state);
     return (
       <Router>
         <section className='main section'>
