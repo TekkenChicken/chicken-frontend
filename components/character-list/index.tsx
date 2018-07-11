@@ -1,12 +1,24 @@
 import React from "react";
-import { Character } from "models";
 import Text from "mineral-ui/Text";
-import { usingCharacterContext } from "providers";
+import CharacterTile from "../character-tile";
+import { Metadata, Map } from "models";
 
-export default usingCharacterContext(({
-    data,
-}) => {
-    return (
+interface Props {
+    data: Map<Metadata>;
+}
+
+const CharacterList: React.SFC<Props> = ({ data }) => (
+    <>
         <Text element="h2">Character list</Text>
-    );
-});
+        { renderCharacters(data) }
+    </>
+);
+
+const renderCharacters = (data: Map<Metadata>) => {
+    // tslint:disable-next-line:forin
+    for (const character in data) {
+        console.log(character);
+    }
+};
+
+export default CharacterList;

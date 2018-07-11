@@ -6,3 +6,5 @@ const whileLoading = (WrappedComponent: React.ComponentType) => branch(
     (props: CharacterContext) => props.data === null,
     renderComponent(Loader),
 )(WrappedComponent);
+
+export default whileLoading;

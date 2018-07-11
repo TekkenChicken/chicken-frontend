@@ -1,14 +1,16 @@
 import { withContext, compose } from "recompose";
 import PropTypes from "prop-types";
-import { Metadata } from "models";
+import { Metadata, Map } from "models";
 import withCharacters from "./withCharacters";
+import whileLoading from "./whileLoading";
+import { RouteComponentProps } from "@reach/router";
 
 export const CharacterPropTypes = {
     data: PropTypes.object,
 };
 
 export interface CharacterContext {
-    data: Metadata[];
+    data: Map<Metadata>;
 }
 
 const context = withContext<CharacterContext, CharacterContext>(
@@ -18,7 +20,8 @@ const context = withContext<CharacterContext, CharacterContext>(
     }),
 );
 
-export default compose(
+export default compose<{}, RouteComponentProps>(
     withCharacters,
+    whileLoading,
     context,
 );

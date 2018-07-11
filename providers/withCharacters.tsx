@@ -10,7 +10,7 @@ const config: AxiosRequestConfig = {
 
 const client = axios.create(config);
 
-const withCharacters = (WrappedComponent: React.Component) => (
+const withCharacters = (WrappedComponent: React.ComponentType) => (
     class extends React.Component {
         public state = {
             data: null,
@@ -19,8 +19,8 @@ const withCharacters = (WrappedComponent: React.Component) => (
 
         public async componentDidMount() {
             await client.get("metadata")
-                .then( ({ data }) => this.setState({ data }))
-                .catch( (error) => this.setState({ error }));
+                .then( (response) => this.setState({ data: response.data }))
+                .catch( (e) => this.setState({ error: e }));
         }
 
         public componentWillUnmount() {
