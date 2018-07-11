@@ -1,13 +1,12 @@
 import React from "react";
 import { Character } from "models";
 import Text from "mineral-ui/Text";
+import { usingCharacterContext } from "providers";
 
-interface Props {
-    characters: Character[];
-}
-
-const CharacterList: React.SFC<Props> = ({ characters }) => (
-    <Text element="h2">Character list</Text>
-);
-
-export default CharacterList;
+export default usingCharacterContext(({
+    data,
+}) => {
+    return (
+        <Text element="h2">Character list</Text>
+    );
+});
