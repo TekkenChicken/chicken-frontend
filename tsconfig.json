@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "commonjs",
+        "jsx": "react",
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "models": ["./models"],
+            "components": ["./components"]
+        }
+    }
+}
