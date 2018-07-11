@@ -15,10 +15,15 @@ const CharacterList: React.SFC<Props> = ({ data }) => (
 );
 
 const renderCharacters = (data: Map<Metadata>) => {
+    const charData = [];
     // tslint:disable-next-line:forin
     for (const character in data) {
-        console.log(character);
+        if (data[character].hasOwnProperty("name")) {
+            charData.push(data[character]);
+        }
     }
+
+    return charData.map( (character, index) => <CharacterTile key={index} character={character}/>);
 };
 
 export default CharacterList;
