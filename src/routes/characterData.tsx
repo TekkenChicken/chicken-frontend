@@ -1,12 +1,12 @@
 import React from "react";
-import { RouteComponentProps } from "@reach/router";
+import { withMoveContext } from "providers";
+import CharacterMoves from "../components/character-moves";
+import { Location } from "@reach/router";
 
-interface Props {
-    name: string;
-}
-
-const CharacterData: React.SFC<RouteComponentProps<Props>> = ({ name }) => (
-    <h1>character data: {name}</h1>
-);
-
-export default CharacterData;
+export default withMoveContext(() => (
+    <Location>
+        {({location: { pathname }}) => (
+            <CharacterMoves label={pathname}/>
+        )}
+    </Location>
+));

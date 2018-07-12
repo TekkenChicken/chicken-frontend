@@ -6,4 +6,5 @@ export default interface Move {
     on_ch: string;
     properties: string[];
     notes: string;
+    preview_url: string;
 }
